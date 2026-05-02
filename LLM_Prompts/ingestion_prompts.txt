@@ -1,0 +1,39 @@
+Prompt:
+Create a Python script for a RAG ingestion pipeline that:
+- Loads multiple PDF files from a folder
+- Splits them into chunks
+- Generates embeddings using sentence-transformers
+- Stores them in a FAISS vector database
+
+Keep the code simple and runnable.
+
+Model: ChatGPT (GPT-5.3)
+Date: 2026-04-20
+Effectiveness: Good starting point, but lacked metadata handling and robustness.
+
+Prompt:
+Improve the ingestion pipeline with the following:
+- Add metadata such as source filename and page number to each document
+- Use better chunking strategy (chunk size and overlap tuning)
+- Ensure paths are handled robustly using absolute paths
+- Add basic logging to show number of pages and chunks created
+
+Make the code modular and structured.
+
+Model: ChatGPT (GPT-5.3)
+Date: 2026-04-20
+Effectiveness: Improved structure and traceability, but still included noisy chunks and lacked filtering.
+
+Prompt:
+Refactor the ingestion pipeline into a production-style version with:
+- Text cleaning to normalize whitespace
+- Filtering out small or noisy chunks
+- Proper error handling for missing data folder or empty PDFs
+- Option to rebuild or skip FAISS index
+- Debug outputs such as sample chunk preview and metadata
+
+Ensure the pipeline is robust, debuggable, and suitable for evaluation in a RAG system.
+
+Model: ChatGPT (GPT-5.3)
+Date: 2026-04-20
+Effectiveness: Produced a robust and clean ingestion pipeline with improved chunk quality and debugging capability.

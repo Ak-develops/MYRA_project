@@ -1,0 +1,72 @@
+Task: Generate a clean, production-grade system architecture diagram for a Retrieval-Augmented Generation (RAG) system named "RITA".
+
+Output Requirements:
+
+* Use Mermaid flowchart syntax ONLY.
+* Flow direction MUST be LEFT-to-RIGHT (flowchart LR).
+* Do NOT add explanations outside the diagram.
+* Use clear node labels with line breaks for parameters.
+* Keep diagram minimal, readable, and non-decorative.
+
+Structure:
+Group all components into EXACTLY four subgraphs:
+
+1. Data Ingestion Pipeline
+2. Retrieval & Reranking
+3. Generation & Context Management
+4. Evaluation Loop
+
+System Specification:
+
+[1] Data Ingestion Pipeline:
+
+* Academic PDFs → PyPDFLoader → Raw Text
+* RecursiveCharacterTextSplitter
+  chunk_size = 700
+  chunk_overlap = 150
+* Embedding Model: all-MiniLM-L6-v2 (384-dim)
+* Output → FAISS Index
+
+[2] Retrieval & Reranking:
+
+* User Query → Query Embedding (same MiniLM model)
+* FAISS Retriever → Top 10 chunks
+* Cross-Encoder: ms-marco-MiniLM-L-6-v2
+* Rerank Top 10 → Select Top 4
+
+IMPORTANT: Reranking MUST be shown as a separate step from retrieval.
+
+[3] Generation & Context Management:
+
+* Conversation Memory (stored as embeddings)
+* Memory Retriever (semantic search over past interactions)
+* Prompt Builder combines:
+  • System Rules
+  • Top-4 Retrieved Context
+  • Conversation History
+  • User Style (ELI5 / Structured)
+* LLM Router:
+  Primary → Groq LLaMA 3.3
+  Fallback → Gemini 3 Flash
+* Output → Generated Answer
+
+[4] Evaluation Loop:
+
+* Compare Generated Answer with Top-4 Retrieved Chunks
+* Compute Weighted Cosine Similarity
+* Decision Node:
+  IF score < threshold → Reject Answer ("Answer not found in provided documents")
+  ELSE → Accept Answer
+
+Constraints:
+
+* Explicitly show data transformations:
+  PDF → text → chunks → embeddings → retrieved chunks → reranked chunks → answer
+* Show interaction between ALL modules.
+* Include feedback loop from Evaluation back to User Query.
+* Do NOT merge retrieval and reranking.
+* Do NOT omit query embedding step.
+* Avoid abstract labels like “processing” or “system”.
+
+Goal:
+The diagram must be implementation-accurate, not conceptual. Every node should represent a real computation step.

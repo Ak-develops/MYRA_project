@@ -1,0 +1,16 @@
+Prompt:
+Create a robust Python retriever module for a RAG system that:
+
+- Loads a FAISS vector store from a local folder using HuggingFace embeddings
+- Uses absolute paths to ensure correct loading regardless of execution directory
+- Retrieves top-k relevant documents (k=8) for a query
+- Applies cross-encoder reranking (using sentence-transformers CrossEncoder) to select top 4 most relevant results
+- Preserves metadata such as source file name and page number
+- Includes a separate rerank function for modularity
+- Provides a main test block to run a sample query and print retrieved chunks with metadata
+
+Ensure the code is modular, debuggable, and suitable for integration into a full RAG pipeline.
+
+Model: ChatGPT (GPT-5.3)
+Date: 2026-04-20
+Effectiveness: Generated a clean and modular retriever with reranking, significantly improving retrieval relevance and debuggability.

@@ -1,0 +1,120 @@
+prompt 1: Basic RAG skeleton
+
+You are a Python developer. Create a basic RAG pipeline in a file called rag_core.py.
+
+Requirements:
+- Import:
+    from src.retriever import retrieve
+    from src.prompt_builder import build_prompt
+    from src.llm import generate_response
+- Define a class RAGCore
+- Add __init__ with:
+    top_k, max_context_length, use_sources
+- Implement:
+    1. _format_context(docs):
+        - Combine doc.page_content into a single string
+        - Add labels like [Doc 1]
+        - Limit length
+    2. query(query: str):
+        - retrieve documents
+        - format context
+        - build prompt
+        - generate response
+        - return answer
+
+Constraints:
+- Keep it simple (no memory, no evaluation yet)
+- Clean readable code
+- Include a CLI test block (__main__) to test queries
+
+Output only code.
+
+prompt 2:  Add evaluation + guardrails
+
+Update the existing rag_core.py to include evaluation and answer validation.
+
+Requirements:
+- Import:
+    from evaluation.evaluate import evaluate_answer
+
+Modify query() to:
+1. After generating answer:
+    - call evaluate_answer(query, answer, context, docs)
+2. Extract:
+    confidence and verdict
+3. Add guardrail:
+    if confidence < threshold:
+        answer = "I don't know based on the provided documents."
+4. Add confidence_threshold parameter in __init__
+
+Return format should now be:
+{
+    "answer": str,
+    "confidence": float,
+    "verdict": str,
+    "sources": list
+}
+
+Also:
+- Add _extract_sources(docs) method
+- Return unique source names
+
+Constraints:
+- Do not break existing structure
+- Keep code clean and modular
+- No memory yet
+
+Output full updated file.
+
+prompt 3: Add memory + fallback
+
+Update rag_core.py to support conversational memory and fallback when retrieval fails.
+
+Requirements:
+
+Import:
+    from src.memory import ConversationMemory
+
+Modify class:
+
+1. __init__:
+    - Add memory parameter (optional)
+    - If not provided, initialize ConversationMemory()
+
+2. Modify query():
+
+STEP 1:
+    docs = retrieve(query)
+
+STEP 2 (IMPORTANT):
+    If no docs:
+        - format memory using memory.format_memory()
+        - build prompt with:
+            context=""
+            memory=memory_text
+            use_memory_only=True
+        - generate answer
+        - update memory (user + assistant)
+        - return:
+            confidence = 0.3
+            verdict = "Memory-Based Answer"
+
+STEP 3 (normal RAG flow):
+    - format context
+    - format memory
+    - build prompt with:
+        query, context, memory, style_config
+    - generate answer
+    - evaluate
+    - apply guardrail
+    - update memory AFTER final answer
+
+Constraints:
+- Memory must NOT be used in retrieval
+- Memory must NOT override context
+- Use memory ONLY when retrieval fails
+
+Keep CLI test block.
+
+Output full final code.
+

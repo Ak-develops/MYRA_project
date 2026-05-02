@@ -1,0 +1,71 @@
+You are a Python developer. Create a file memory.py that implements a simple conversation memory system.
+
+prompt1: Basic memory storage
+
+Requirements:
+- Import:
+    from typing import List, Dict
+
+- Create a class ConversationMemory
+
+- __init__:
+    - Accept max_turns (default = 5)
+    - Initialize:
+        self.history as an empty list
+
+- Implement methods:
+
+1. add_user_message(message: str)
+    - Store message as:
+      {"role": "user", "content": message.strip()}
+
+2. add_assistant_message(message: str)
+    - Store message as:
+      {"role": "assistant", "content": message.strip()}
+
+3. clear()
+    - Reset history to empty list
+
+Constraints:
+- Keep it simple
+- No formatting yet
+- No trimming yet
+- Clean readable code
+
+Output only code.
+
+prompt2: Add trimming + formatting
+
+Update memory.py to make the memory usable for conversational RAG.
+
+Add the following features:
+
+1. format_memory()
+    - Convert history into a string
+    - Format each message as:
+        "User: ..."
+        "Assistant: ..."
+    - Join using newline
+    - Return empty string if no history
+
+2. _trim()
+    - Limit memory size
+    - Keep only last (max_turns * 2) messages
+    - Call _trim() after every message addition
+
+3. get_last_user_query()
+    - Return most recent user message
+    - Iterate history in reverse
+    - Return empty string if none found
+
+Modify:
+- add_user_message() and add_assistant_message()
+    - Call _trim() after appending
+
+Constraints:
+- Do not break existing structure
+- Keep code clean and minimal
+- No external dependencies
+- Keep it lightweight (no database, no embeddings)
+
+Output full updated file.

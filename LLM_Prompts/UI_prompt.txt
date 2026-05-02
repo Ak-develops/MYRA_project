@@ -1,0 +1,85 @@
+You are an expert Python developer. Generate a complete Streamlit app (single file: app.py) for a Retrieval-Augmented Generation (RAG) system.
+
+STRICT REQUIREMENTS:
+
+PROJECT STRUCTURE:
+- The project has folders: src/, app/, evaluation/
+- The Streamlit file is inside app/app.py
+- Backend modules:
+  - from src.rag_core import RAGCore
+  - from src.memory import ConversationMemory
+
+IMPORT FIX:
+- Add sys.path logic at top so app can import from src/
+
+CORE FEATURES:
+
+1. MULTI-CHAT SYSTEM
+- Sidebar must allow:
+  - "+ New Chat" button
+  - List of chats (Chat 1, Chat 2, etc.)
+- Each chat must maintain:
+  - messages (list of dicts: role, content)
+  - memory (ConversationMemory instance)
+  - style_config (dict)
+
+2. MEMORY HANDLING
+- Each chat has its own memory instance
+- Pass memory into RAGCore(memory=chat["memory"])
+
+3. PROMPT CONTROLS (SIDEBAR)
+Add UI controls that update per-chat style_config:
+
+- tone (selectbox): professional, casual, eli5, analogy, interview
+- depth (slider: 0–5)
+- language (selectbox: English, Hinglish)
+- format (selectbox: normal, bullet, step, structured)
+- bullet_summary (checkbox)
+- show_meta (checkbox for showing confidence/sources)
+
+Ensure style_config is updated dynamically per chat.
+
+4. MAIN CHAT UI
+- Display chat messages using st.chat_message
+- Use st.chat_input for user input
+- Maintain message history per chat
+
+5. BACKEND CONNECTION
+- On user input:
+  - call:
+    result = rag.query(user_input, style_config=chat["style"])
+- Extract:
+  - answer
+  - confidence
+  - verdict
+  - sources
+
+6. RESPONSE DISPLAY
+- Show assistant response
+- If show_meta is enabled:
+  - show confidence + verdict
+  - show sources list
+
+7. SESSION STATE
+Use st.session_state to manage:
+- chats dictionary
+- current_chat
+- show_meta
+
+8. CLEAN ARCHITECTURE
+- Do NOT mix backend logic in UI
+- Do NOT use global memory
+- Each chat must be isolated
+
+9. UX REQUIREMENTS
+- If no chat exists, show "Start a new chat"
+- Automatically switch to new chat when created
+
+10. OUTPUT
+- Provide FULL working code for app.py
+- No explanations
+- No pseudocode
+- Clean, production-style code
+
+Goal:
+This should behave like a ChatGPT-style UI with multi-chat, per-chat memory, and prompt customization connected to a RAG backend.
