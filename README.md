@@ -143,7 +143,7 @@ Measures alignment between:
 
 ### 1. Clone Repository
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/Ak-develops/RITA_rag_project>
 cd rag_project
 ```
 
