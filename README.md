@@ -1,4 +1,4 @@
-# 🔐 Retrieval-based Teaching Assistant (RITA)
+# 🔐 MY RAG Assistant (MYRA)
 
 A Retrieval-Augmented Generation (RAG) system designed to answer NLP and LLM-related queries using trusted academic resources such as *Introduction to Natural Language Processing* by Tong Xiao and Jingbo Zhu.
 

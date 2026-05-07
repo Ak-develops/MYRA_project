@@ -161,7 +161,7 @@ with st.sidebar:
 
 
 # ---------- MAIN ----------
-st.title("💬SUNDAY Chats")
+st.title("💬MYRA Chats")
 
 chat = st.session_state.chats[st.session_state.current_chat]
 
