@@ -2,7 +2,8 @@
 
 A Retrieval-Augmented Generation (RAG) system designed to answer NLP and LLM-related queries using trusted academic resources such as *Introduction to Natural Language Processing* by Tong Xiao and Jingbo Zhu.
 
-Instead of relying purely on LLM memory (which is prone to hallucination), RITA grounds responses in specific academic documents to provide technically accurate and context-aware information.
+Instead of relying purely on LLM memory (which is prone to hallucination), MYRA
+ grounds responses in specific academic documents to provide technically accurate and context-aware information.
 
 ---
 
@@ -13,7 +14,8 @@ Traditional LLMs often:
 - Provide generic advice that lacks academic depth
 - Fail to reference specific textbook methodologies
 
-### ✅ RITA solves this by:
+### ✅ MYRA
+ solves this by:
 - Retrieving relevant chunks from NLP and LLM textbooks
 - Generating context-grounded answers based on retrieved data
 - Reducing hallucination risk through strict grounding checks
@@ -143,14 +145,17 @@ Measures alignment between:
 
 ### 1. Clone Repository
 ```bash
-git clone <https://github.com/Ak-develops/RITA_rag_project>
+git clone <https://github.com/Ak-develops/MYRA
+_rag_project>
 cd rag_project
 ```
 
 ### 2. Create Environment
 ```bash
-conda create -n rita_env python=3.10
-conda activate rita_env
+conda create -n MYRA
+_env python=3.10
+conda activate MYRA
+_env
 pip install -r requirements.txt
 ```
 
