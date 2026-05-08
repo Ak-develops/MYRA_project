@@ -1,0 +1,190 @@
+Prompt 1: Deep Code Understanding
+
+You are a senior AI engineer and academic project reviewer.
+
+I will provide a GitHub repository link for my RAG (Retrieval-Augmented Generation) project built using NLP, LLMs, embeddings, vector databases, and Streamlit.
+
+Your task is NOT to give a shallow summary.
+
+I want you to deeply inspect and understand the ENTIRE repository like a technical reviewer preparing for a project viva.
+
+Analyze:
+1. Full architecture
+2. Folder structure
+3. Data ingestion pipeline
+4. Chunking strategy
+5. Embedding generation
+6. Vector database usage
+7. Retrieval pipeline
+8. Prompt engineering
+9. LLM integration
+10. Streamlit frontend flow
+11. Query-to-response lifecycle
+12. Any memory handling
+13. Error handling
+14. Environment/config management
+15. Dependencies and libraries
+16. Modularization quality
+17. Scalability considerations
+18. Security/privacy concerns
+19. Performance bottlenecks
+20. Missing or weak engineering practices
+
+Then produce:
+
+SECTION 1:
+A beginner-friendly explanation of the entire project flow from document upload to final response generation.
+
+SECTION 2:
+A highly technical explanation suitable for professor viva questions.
+
+SECTION 3:
+A complete architecture breakdown with component responsibilities.
+
+SECTION 4:
+The exact execution flow step-by-step:
+User query → embedding → retrieval → prompt construction → LLM response → UI rendering.
+
+SECTION 5:
+Important files and what each file does.
+
+SECTION 6:
+Strengths of the project.
+
+SECTION 7:
+Weaknesses, shortcuts, or places where the implementation looks tutorial-based or incomplete.
+Be brutally honest.
+
+SECTION 8:
+Possible future improvements that sound academically strong but realistic for a college project.
+
+SECTION 9:
+Generate 25 possible viva questions and strong answers based ONLY on the actual repository.
+
+SECTION 10:
+Create a concise “2-minute explanation” I can say during presentation.
+
+Do NOT hallucinate features.
+If something is missing, explicitly say it is missing.
+If code quality is weak, explain why.
+If architecture is good, explain why.
+
+First ask me for the GitHub repository link.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Prompt 2: PPT Generation
+
+Now create a PROFESSIONAL college-level PPT structure for this project.
+
+Audience:
+Professor and technical evaluators.
+
+The PPT should sound polished, technically competent, and academically strong without sounding overly corporate.
+
+Generate:
+1. Slide titles
+2. Exact slide content
+3. Speaker notes for each slide
+4. Suggested diagrams/visuals
+5. Suggested screenshots from the project
+6. Key technical terms to highlight
+7. What NOT to say during presentation
+8. Likely professor questions after each section
+
+The presentation should include:
+- Problem statement
+- Why RAG instead of fine-tuning
+- System architecture
+- NLP pipeline
+- Embedding workflow
+- Vector database explanation
+- Retrieval mechanism
+- Prompt engineering
+- LLM response generation
+- Streamlit interface
+- Challenges faced
+- Results/demo
+- Limitations
+- Future scope
+- Conclusion
+
+Important:
+- Make the project look polished and well-engineered.
+- Use academic language but avoid fake buzzwords.
+- Do not invent metrics that do not exist.
+- Keep slides concise and presentation-friendly.
+- Avoid walls of text.
+- Make it sound like a real implemented system, not a tutorial clone.
+
+Also:
+Generate a final “best presentation flow strategy” explaining:
+- which slides to spend most time on,
+- where professors are likely to interrupt,
+- where I should sound confident,
+- and which technical topics I must understand properly before presenting.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Prompt 3: Report Generation
+
+Now generate a complete academic project report for this RAG-based NLP + LLM application.
+
+Requirements:
+- College assignment level
+- Professional formatting style
+- Technically accurate
+- Clear and readable
+- No generic AI fluff
+- No repetitive explanations
+- No fake research claims
+
+The report should contain:
+
+1. Title Page
+2. Certificate Page
+3. Acknowledgement
+4. Abstract
+5. Table of Contents
+6. Introduction
+7. Problem Statement
+8. Objectives
+9. Literature Review
+10. Technologies Used
+11. System Architecture
+12. Methodology
+13. Data Flow
+14. NLP Pipeline
+15. Embedding and Retrieval Mechanism
+16. Vector Database Explanation
+17. Prompt Engineering Approach
+18. Streamlit Frontend
+19. Implementation Details
+20. Important Code Modules
+21. Challenges Faced
+22. Results and Outputs
+23. Limitations
+24. Future Enhancements
+25. Conclusion
+26. References
+
+Additional instructions:
+- Base explanations ONLY on the actual repository implementation.
+- If implementation is simple, present it professionally but honestly.
+- Explain engineering decisions clearly.
+- Include technical terminology where appropriate.
+- Include placeholders where screenshots should be added.
+- Add flowchart suggestions.
+- Add tables wherever useful.
+- Add short code snippets only if they genuinely help understanding.
+- Avoid sounding AI-generated.
+- Write in a natural academic tone.
+
+At the end:
+Generate:
+1. Executive summary
+2. Viva preparation notes
+3. One-page cheat sheet for revision before presentation
+4. Keywords/topics I absolutely must understand to avoid getting exposed during viva
